@@ -2,7 +2,6 @@ package edu.uc.cech.soit.myclassjournal.service;
 
 import edu.uc.cech.soit.myclassjournal.dao.IJournalEntryDAO;
 import edu.uc.cech.soit.myclassjournal.dto.JournalEntry;
-import jdk.jfr.Category;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,6 +24,6 @@ public class JournalService implements IJournalService {
 
     @Override
     public List<JournalEntry> fetchAll() {
-        return null;
+        return journalEntryDAO.fetchAll();
     }
 }
