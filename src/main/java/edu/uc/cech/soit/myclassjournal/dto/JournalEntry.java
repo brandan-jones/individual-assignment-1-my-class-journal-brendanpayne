@@ -1,26 +1,20 @@
 package edu.uc.cech.soit.myclassjournal.dto;
 
-import org.springframework.stereotype.Service;
+import lombok.Data;
 
-@Service
-public class JournalEntry {
+import javax.persistence.*;
+import java.util.List;
 
-        private String notes;
-        private String date;
+@Entity
+public @Data
+class JournalEntry {
 
-        public String getNotes() {
-            return notes;
-        }
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
+    private String notes;
+    private String date;
 
-        public void setNotes(String notes) {
-            this.notes = notes;
-        }
+    @OneToMany(mappedBy = "journalEntry")
+    private List<JournalEntry> journalEntries;
 
-        public String getDate() {
-            return date;
-        }
-
-        public void setDate(String date) {
-            this.date = date;
-        }
 }
