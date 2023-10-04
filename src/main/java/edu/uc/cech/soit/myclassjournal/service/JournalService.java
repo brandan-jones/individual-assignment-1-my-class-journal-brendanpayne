@@ -24,6 +24,6 @@ public class JournalService implements IJournalService {
 
     @Override
     public List<JournalEntry> fetchAll() {
-        return null;
+        return journalEntryDAO.fetchAll();
     }
 }
