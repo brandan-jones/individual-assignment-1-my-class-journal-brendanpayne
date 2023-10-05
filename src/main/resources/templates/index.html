@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="">
 <head>
     <meta charset="UTF-8">
     <title>My Journal</title>
@@ -17,23 +17,23 @@
 </head>
 <body>
 
-    My Journal
-    <p th:text="${journalEntries}" />
+My Journal
+<p th:text="${journalEntries}" />
 
-    <form action="#" th:action="@{/saveEntry}" th:object="${journalEntries}" enctype="multipart/form-data"  method="POST"><br />
-        <div class="input-group input-group-sm mb-3">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="notes">Notes</span>
-            </div>
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="notes" th:field="*{notes}"/>
+<form action="#" th:action="@{/saveEntry}" th:object="${journalEntries}" enctype="multipart/form-data"  method="POST"><br />
+    <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="notes">Notes</span>
         </div>
-        <div class="input-group input-group-sm mb-3">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="date">Date</span>
-            </div>
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="date" th:field="*{date}"/>
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="notes" th:field="*{notes}"/>
+    </div>
+    <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="date">Date</span>
         </div>
-        <button name="submit" type="submit" value="0">Submit</button>
-    </form>
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" name="date" th:field="*{date}"/>
+    </div>
+    <button name="submit" type="submit" value="0">Submit</button>
+</form>
 </body>
 </html>
