@@ -35,6 +35,8 @@ public class JournalEntryDAO implements IJournalEntryDAO {
 
     @Override
     public List<JournalEntry> fetchByDate(String date) {
-        return new ArrayList<JournalEntry>();
+
+      return new ArrayList<JournalEntry>();
+
     }
 }
